@@ -1,0 +1,59 @@
+{
+  "name": "python-show-references",
+  "displayName": "Python Show References CodeLens",
+  "description": "Show references in Python using CodeLens API",
+  "version": "0.0.1",
+  "publisher": "himmelreich-dev",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himmelreich-dev/python-show-references"
+  },
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:python",
+    "onStartupFinished"
+  ],
+  "extensionDependencies": [
+    "ms-python.python"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [],
+    "languages": [
+        {
+            "id": "python",
+            "extensions": [".py"],
+            "aliases": ["Python", "python"]
+        }
+    ],
+    "configuration": {
+      "properties": {
+        "python-show-references.enableCodeLens": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.0",
+    "@typescript-eslint/parser": "^7.14.0",
+    "eslint": "^8.26.0",
+    "typescript": "^5.5.2"
+  }
+}
